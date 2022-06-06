@@ -1,7 +1,7 @@
 baseurl = "https://halves.dev"
 title = "/halves.dev/null"
 author = "Humberto Alves"
-canonifyurls = true
+canonifyurls = false
 languagecode = "en"
 theme = "tania"
 

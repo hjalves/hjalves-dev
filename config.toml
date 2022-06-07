@@ -6,27 +6,54 @@ languagecode = "en"
 theme = "tania"
 
 [params]
-  titleEmoji = '💾️'
+titleEmoji = '💾️'
+siteName = "/halves.dev/null"
+siteDesc = "Humberto's blog"
+author = "Humberto Alves"
+
+[params.colorScheme]
+toggle = true
+default = "dark"
+
+# Show your social information with icon on index bio with `_index.md` content.
+[params.socialOptions]
+email = "hello@halves.dev"
+github = "https://github.com/hjalves"
+instagram = "https://www.instagram.com/hjfalves"
+linkedin = "https://www.linkedin.com/in/hjalves"
+mastodon = "https://masto.pt/@hjalves"
+telegram = "https://t.me/hjalves"
+twitter = "https://twitter.com/hjalves"
 
 [[menu.primary]]
-    name = "Home"
-    url = "/"
-    weight = 1
+name = "Home"
+url = "/"
+weight = 1
+
 [[menu.header]]
-    name = "About"
-    url = "/about/"
-    weight = 2
+name = "About"
+url = "/about/"
+weight = 2
+
 [[menu.header]]
-    name = "GitHub"
-    url = "https://github.com/hjalves"
-    weight = 3
+name = "GitHub"
+url = "https://github.com/hjalves"
+weight = 3
+
 [[menu.header]]
-    name = "Twitter"
-    url = "https://twitter.com/hjalves"
-    weight = 4
+name = "Twitter"
+url = "https://twitter.com/hjalves"
+weight = 4
+
 [[menu.header]]
-    name = "Mastodon"
-    url = "https://masto.pt/@hjalves"
-    weight = 5
-    params = { rel = "me" }
-      
+name = "Masto"
+url = "https://masto.pt/@hjalves"
+weight = 5
+params = { rel = "me" }
+
+[[menu.footer]]
+name = "RSS"
+url = "/index.xml"
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]

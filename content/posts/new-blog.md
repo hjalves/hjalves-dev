@@ -5,9 +5,9 @@ author: Humberto Alves
 ---
 
 Hello! This is my new blog.
-It uses the [Hugo static site generator](https://gohugo.io/), and a theme based on an
-older version of [Tania Rascia's website](https://taniarascia.com) available
-here: https://github.com/WingLim/hugo-tania.
+It uses the [Hugo static site generator](https://gohugo.io/), and a theme _inspired_
+in an older version of [Tania Rascia's website](https://taniarascia.com)
+available here: https://github.com/WingLim/hugo-tania.
 
 My previous blog was based on [Pelican](https://blog.getpelican.com/), and although I
 really loved the fact that it was written in Python, I needed to try something new to

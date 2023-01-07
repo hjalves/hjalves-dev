@@ -117,4 +117,4 @@ With this approach, it's theoretically possible to build Python bindings for Lib
 but it's really hard work to do that, I think. Another way to build this kind of integration is
 to use the [CPython C API](https://docs.python.org/3/c-api/index.html).
 
-That's all for today. I hope you find this post interesting x)
+That's all for today. I hope you find this post interesting in any way. x)

@@ -12,7 +12,7 @@ of its optional dependencies also ported, like sqlite, zlib, ncurses.
 Fun fact: [webbrowser module has official support for launching the Serenity's Ladybird Browser](https://github.com/python/cpython/commit/329a47f0524e9d3f43f1e28c4f9e7c088662c030).
 
 One of such optional dependencies is *libffi*, which is a foreign-function interface library.
-Having this library activates the availability of the module [*ctypes*](https://docs.python.org/3/library/ctypes.html).
+Having this dependency makes the [*ctypes*](https://docs.python.org/3/library/ctypes.html) module available.
 
 With *ctypes*, we can easily call C compatible functions exported by a shared library, which means
 it should be possible to interface with the Serenity C++ classes, providing that we write wrapper
@@ -32,7 +32,7 @@ mkdir -p Userland/Libraries/LibExample && cd $_
 touch CMakeLists.txt Example.cpp Example.h
 ```
 
-We're going to build a really simple one-function library that sends desktop notifications!
+We're going to build a really simple one-function library that sends (push-like) desktop notifications!
 
 ```C++
 /* Example.h */
@@ -114,5 +114,8 @@ And there we go! Sending a SerenityOS desktop notification via Python:
 (I also introduced an icon file as a third parameter, so I could find a reason to
 show the wholesome *catdog* mascot in this post.)
 
+With this approach, it's theoretically possible to build Python bindings for LibGUI (and other components),
+but it's really hard work to do that, I think. Another way to build this kind of integration is
+to use the [CPython C API](https://docs.python.org/3/c-api/index.html).
+
 I hope you find this post interesting x)
-Cheers!

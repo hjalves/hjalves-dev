@@ -11,6 +11,5 @@ This is my personal blog. I'm using this space to write about projects that I'm 
 on or stuff that I found interesting on the interwebs.
 
 I'm [`hjalves#6172`](https://discordapp.com/users/hjalves#6172/) on Discord, in case 
-you want to contact me (!). You can also send me a message through any of the social 
-networks in the main page.
-
+you want to contact me (!). You can also send me a message through any of the online
+services and social networks in the main page.

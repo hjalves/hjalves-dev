@@ -1,7 +1,6 @@
 ---
 title: "New Blog"
 date: 2022-06-05T16:41:03+01:00
-author: Humberto Alves
 ---
 
 Hello! This is my new blog.

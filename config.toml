@@ -1,5 +1,5 @@
 baseurl = "https://halves.dev"
-title = "/halves.dev/null"
+title = "halves.dev"
 author = "Humberto Alves"
 canonifyurls = false
 languagecode = "en"
@@ -7,7 +7,7 @@ theme = "tania"
 
 [params]
 titleEmoji = '💾️'
-siteName = "/halves.dev/null"
+siteName = "halves.dev"
 siteDesc = "Humberto's blog"
 author = "Humberto Alves"
 
@@ -15,14 +15,12 @@ author = "Humberto Alves"
 toggle = true
 default = "dark"
 
-# Show your social information with icon on index bio with `_index.md` content.
 [params.socialOptions]
 email = "hello@halves.dev"
 github = "https://github.com/hjalves"
 instagram = "https://www.instagram.com/hjfalves"
 linkedin = "https://www.linkedin.com/in/hjalves"
 mastodon = "https://masto.pt/@hjalves"
-telegram = "https://t.me/hjalves"
 twitter = "https://twitter.com/hjalves"
 
 [[menu.primary]]
@@ -41,12 +39,7 @@ url = "https://github.com/hjalves"
 weight = 3
 
 [[menu.header]]
-name = "Twitter"
-url = "https://twitter.com/hjalves"
-weight = 4
-
-[[menu.header]]
-name = "Masto"
+name = "Mastodon"
 url = "https://masto.pt/@hjalves"
 weight = 5
 params = { rel = "me" }

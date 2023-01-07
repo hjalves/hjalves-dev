@@ -2,4 +2,5 @@
 title: Hello
 ---
 
-Welcome to my blog ^^ Feel free to contact me through any of the following channels:
+Welcome to my blog, where I document my journey as I delve into 
+the world of open-source software development.

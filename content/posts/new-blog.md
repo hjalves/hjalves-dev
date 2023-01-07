@@ -19,4 +19,4 @@ I'm going to try to write exclusively in English this time, because even though 
 terrible at expressing myself in English (and in general), I hope I can improve my
 writing skills while doing so.
 
-That's all for today. Take care 😃
+Hope there's any relevant or interesting content to you, my dear reader! 😃

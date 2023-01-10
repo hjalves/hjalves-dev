@@ -1,6 +1,10 @@
 ---
 title: "SerenityOS"
 date: 2022-06-06T17:00:00+01:00
+categories:
+- serenityos
+tags:
+- serenityos
 ---
 
 SerenityOS is a POSIX compliant system with a retro-style UI (heavily inspired 

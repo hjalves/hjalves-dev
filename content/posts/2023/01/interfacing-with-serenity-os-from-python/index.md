@@ -1,6 +1,12 @@
 ---
 title: "Interfacing with SerenityOS from Python"
 date: 2023-01-07T17:58:50Z
+categories:
+- serenityos
+tags:
+- python
+- serenityos
+- ctypes
 ---
 
 As my first post related to SerenityOS development, I'm going to talk about a topic

@@ -48,5 +48,10 @@ params = { rel = "me" }
 name = "RSS"
 url = "/index.xml"
 
+[markup]
+[markup.highlight]
+noClasses = false
+lineNos = true
+
 [outputs]
 home = ["HTML", "RSS", "JSON"]

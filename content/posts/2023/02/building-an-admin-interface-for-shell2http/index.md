@@ -1,7 +1,6 @@
 ---
-title: "Building an Admin Interface for Shell2http"
-date: 2023-02-06T21:15:57Z
-draft: true
+title: "Building an admin interface for shell2http"
+date: 2023-02-07T13:00:00Z
 categories:
 - webdev
 tags:
@@ -32,7 +31,7 @@ running *daemon-reload* and *restart* everytime I want to add or remove scripts.
 
 So I had this great (or terrible) idea to make a web administration interface
 where I could change the available scripts, username and password used for authentication,
-and restart the process with the newly configured parameters.
+and restart the service with the newly configured parameters.
 
 However, I wanted to make the easiest possible deployment, using shell2http
 as the "application server" and Python as the language for building 
@@ -41,7 +40,7 @@ by default in all major Linux distributions. To achieve these goals my
 constraints were the following:
 
 - It should be written in a single Python file
-- No Python/CSS/Javascript dependencies
+- No Python/CSS/Javascript dependencies whatsoever
 
 ## Starting from the systemd unit file
 
@@ -229,6 +228,29 @@ class ThreadPoolWSGIServer(ThreadingMixIn, WSGIServer):
 How neat! I could use this solution to fully replace shell2http, but I'm not
 inclined to, because I trust way more that project than my own code :)
 
+## Some screenshots
+
+Here is some screenshots of the app. It is kinda ugly at the moment,
+but it is what it is...
+
+---
+
+![Routing](screenshot-1.png)
+
+---
+
+![Authentication](screenshot-2.png)
+
+---
+
+![Service](screenshot-3.png)
+
+## Next steps
+
+To make this project perfect for me, it should automatically download and install
+shell2http binary when missing, create a systemd unit file, and update itself
+from the repository. The look and feel could also be improved, I guess.
+
 ## Conclusion
 
 I hope you found anything useful or at least interesting here. I'm not 
@@ -237,7 +259,7 @@ big security nightmare, but if you're really inclined to use this, at least
 run it behind a reverse proxy with a better authentication mechanism :)
 
 If you want to take a look at the full code, this is the repository:
-https://github.com/hjalves/s2h-admin
+https://github.com/hjalves/s2h-admin.
 
 The code is not that interesting apart from the stuff I mentioned here, and it's
 very messy, but I appreciate if you have any suggestion on how to improve it.

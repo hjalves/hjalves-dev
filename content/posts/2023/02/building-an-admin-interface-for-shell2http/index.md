@@ -19,7 +19,7 @@ In my home network, I have many remote control functions that need to be called 
 These functions are generally written and deployed as shell scripts, stuff like 
 "powering on a computer", "turning off a device", "beep with a specific sound", and so on.
 
-Now, if wanted to have perfect security, I should run these scripts via SSH, ideally with
+Now, if I wanted to have perfect security, I should run these scripts via SSH, ideally with
 a user created for this purpose. But because I'm a lazy person, I want to be able to run
 this with minimal effort and simple authentication. [shell2http](https://github.com/msoap/shell2http)
 is the perfect solution to do just that -- it allows the execution of shell scripts

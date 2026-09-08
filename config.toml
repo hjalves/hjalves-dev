@@ -38,12 +38,6 @@ name = "GitHub"
 url = "https://github.com/hjalves"
 weight = 3
 
-[[menu.header]]
-name = "Mastodon"
-url = "https://masto.pt/@hjalves"
-weight = 5
-params = { rel = "me" }
-
 [[menu.footer]]
 name = "RSS"
 url = "/index.xml"

@@ -1,5 +1,5 @@
 ---
-title: halves.dev
+title: Index
 ---
 
 Welcome to my blog, where I document my journey as I delve into 

@@ -2,7 +2,7 @@ baseurl = "https://halves.dev"
 title = "halves.dev"
 author = "Humberto Alves"
 canonifyurls = false
-languagecode = "en"
+locale = "en"
 theme = "tania"
 
 [params]

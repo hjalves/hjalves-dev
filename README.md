@@ -1,6 +1,6 @@
 # hjalves.dev
 
-Source for [hjalves.dev](https://hjalves.dev), Humberto Alves' personal blog and project site. The site contains articles about software development, open-source projects, and related experiments.
+Source for [hjalves.dev](https://www.hjalves.dev), Humberto Alves' personal blog and project site. The site contains articles about software development, open-source projects, and related experiments.
 
 The site is built with [Hugo](https://gohugo.io/) and uses a customised copy of the [Tania](https://github.com/WingLim/hugo-tania) theme in `themes/tania/`. The theme is part of this repository; edit it directly.
 

@@ -2,29 +2,23 @@
 
 Source for [hjalves.dev](https://hjalves.dev), Humberto Alves' personal blog and project site. The site contains articles about software development, open-source projects, and related experiments.
 
-The site is built with [Hugo](https://gohugo.io/) and uses the [Tania](https://github.com/hjalves/hugo-tania) theme as a Git submodule.
+The site is built with [Hugo](https://gohugo.io/) and uses a customised copy of the [Tania](https://github.com/WingLim/hugo-tania) theme in `themes/tania/`. The theme is part of this repository; edit it directly.
 
 ## Requirements
 
 - [Hugo Extended](https://gohugo.io/installation/) `0.165.0` or later
 - [Dart Sass](https://sass-lang.com/install/) (the theme's stylesheets need it; on Arch: `pacman -S dart-sass`)
-- Git, including submodule support
+- Git
 
 The deployed site uses Hugo `0.165.0` and Dart Sass `1.108.2`, as configured in [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
 
 ## Getting started
 
-Clone the repository and initialize the theme submodule:
+Clone the repository:
 
 ```bash
-git clone --recurse-submodules https://github.com/hjalves/hjalves-dev.git
+git clone https://github.com/hjalves/hjalves-dev.git
 cd hjalves-dev
-```
-
-If the repository was cloned without submodules, initialize it with:
-
-```bash
-git submodule update --init --recursive
 ```
 
 Start the local development server:
@@ -59,7 +53,7 @@ The generated files are written to `public/`. The deploy workflow builds the sam
 
 ```text
 content/       Pages, posts, and project entries
-themes/tania/  Tania theme submodule
+themes/tania/  Tania theme (customised)
 static/        Files copied directly to the generated site
 config.toml    Hugo site configuration
 archetypes/    Templates for new content

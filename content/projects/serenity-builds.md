@@ -1,9 +1,8 @@
 ---
 title: "SerenityOS Builds"
 date: 2022-06-07
-description: Unofficial nightly builds of the Serenity Operating System.
+description: Unofficial nightly builds of the Serenity Operating System (discontinued).
 weight: 1
-link: https://serenity-builds.halves.dev
-repo: https://gitlab.com/hjalves/serenity-builds
+repo: https://github.com/hjalves/serenity-builds
 icon: 🐞
 ---

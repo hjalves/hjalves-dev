@@ -1,6 +1,7 @@
 ---
 title: "SerenityOS"
 date: 2022-06-06T17:00:00+01:00
+description: What SerenityOS is, why I find it fascinating, and my plan to start contributing to it.
 categories:
 - serenityos
 tags:
@@ -8,7 +9,7 @@ tags:
 ---
 
 SerenityOS is a POSIX compliant system with a retro-style UI (heavily inspired 
-in Windows 2000), written in modern C++ and a custom, friendlier alternative to the STL 
+by Windows 2000), written in modern C++ and a custom, friendlier alternative to the STL 
 (the C++ stdlib equivalent). It was started in 2018 by Andreas Kling, and since 
 then, it just kept growing and amassing a vibrant community of developers and 
 enthusiasts.
@@ -19,7 +20,7 @@ in early development.
 
 Every piece of software from the kernel to the userland applications live in 
 the same repository (monorepo approach). And one of the core philosophies is to 
-implement every component of the system ‘in home’ - drivers, protocols and tools. 
+implement every component of the system in-house - drivers, protocols and tools. 
 It even has a browser built completely from scratch (which is quite insane!).
 
 Although it tries to not depend on third-party software and libraries, it still 
@@ -31,7 +32,7 @@ channel](https://www.youtube.com/c/AndreasKling)
 (especially the monthly updates and the weekly Q&A on Fridays afternoons).
 
 But after lurking around for many months, I finally decided to contribute, 
-even thought I don’t really know how to code in C++. I have a small list of 
+even though I don’t really know how to code in C++. I have a small list of 
 things I would like to fix and improve.
 
 I will try to post regular updates describing my journey and experiences 

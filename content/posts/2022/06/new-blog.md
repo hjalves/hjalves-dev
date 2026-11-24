@@ -1,6 +1,7 @@
 ---
 title: "New Blog"
 date: 2022-06-05T16:41:03+01:00
+description: A new Hugo-based blog, replacing my old Pelican one, and written in English this time.
 categories:
 - meta
 tags:
@@ -9,7 +10,7 @@ tags:
 
 Hello! This is my new blog.
 It uses the [Hugo static site generator](https://gohugo.io/), and a theme _inspired_
-in an older version of [Tania Rascia's website](https://taniarascia.com)
+by an older version of [Tania Rascia's website](https://taniarascia.com)
 available here: https://github.com/WingLim/hugo-tania.
 
 My previous blog was based on [Pelican](https://blog.getpelican.com/), and although I

@@ -1,6 +1,7 @@
 ---
 title: "Interfacing with SerenityOS from Python"
 date: 2023-01-07T17:58:50Z
+description: Calling a small C++ SerenityOS library from Python with ctypes, to show desktop notifications.
 categories:
 - serenityos
 tags:
@@ -94,7 +95,7 @@ lib.notify(b"Well", b"Hello friends")
 
 And...
 
-![It crashed](screenshot-1.png)
+![Python crashing with an error when calling notify()](screenshot-1.png)
 
 It crashed! (At least the error is pretty cool)
 
@@ -114,7 +115,7 @@ if (!app) {
 
 And there we go! Displaying a notification on the SerenityOS desktop, via Python: 
 
-![It crashed](screenshot-2.png)
+![A notification shown on the SerenityOS desktop](screenshot-2.png)
 
 (I also introduced an icon file as a third parameter, so I could find a reason to
 show the wholesome *catdog* mascot in this post.)

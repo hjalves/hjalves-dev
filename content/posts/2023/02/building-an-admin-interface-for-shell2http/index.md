@@ -1,6 +1,7 @@
 ---
 title: "Building an admin interface for shell2http"
 date: 2023-02-07T13:00:00Z
+description: A single-file, dependency-free Python web interface for managing shell2http scripts, built on the standard library.
 categories:
 - webdev
 tags:
@@ -27,7 +28,7 @@ via HTTP, in a way that's very similar to the old CGI style of building web appl
 
 Using shell2http and a systemd service have been perfect for my own needs. But it
 gets annoying having to connect to the machine via SSH, changing the systemd unit file, 
-running *daemon-reload* and *restart* everytime I want to add or remove scripts.
+running *daemon-reload* and *restart* every time I want to add or remove scripts.
 
 So I had this great (or terrible) idea to make a web administration interface
 where I could change the available scripts, username and password used for authentication,
@@ -70,11 +71,11 @@ the executable as an environment variable `v_parameter`).
 File uploads are also supported, see the documentation for more details.
 
 My first change was to remove the path-script declarations from this file and put
-in a separated `.env` file. The way to do this is to add a `EnvironmentFile` declaration:
+in a separated `.env` file. The way to do this is to add an `EnvironmentFile` declaration:
 
 ```systemd
 EnvironmentFile=-/home/user/s2h/s2h.env
-ExecStart=/home/dk/s2h/shell2http -show-errors -include-stderr -form -port 9999 \
+ExecStart=/home/user/s2h/shell2http -show-errors -include-stderr -form -port 9999 \
     /admin "s2h/s2h_admin.py" $SH_ROUTES
 ```
 
@@ -226,11 +227,11 @@ class ThreadPoolWSGIServer(ThreadingMixIn, WSGIServer):
 ```
 
 How neat! I could use this solution to fully replace shell2http, but I'm not
-inclined to, because I trust way more that project than my own code :)
+inclined to, because I trust that project way more than my own code :)
 
 ## Some screenshots
 
-Here is some screenshots of the app. It is kinda ugly at the moment,
+Here are some screenshots of the app. It is kinda ugly at the moment,
 but it is what it is...
 
 ---

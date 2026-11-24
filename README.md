@@ -7,9 +7,10 @@ The site is built with [Hugo](https://gohugo.io/) and uses the [Tania](https://g
 ## Requirements
 
 - [Hugo Extended](https://gohugo.io/installation/) `0.165.0` or later
+- [Dart Sass](https://sass-lang.com/install/) (the theme's stylesheets need it; on Arch: `pacman -S dart-sass`)
 - Git, including submodule support
 
-The deployed site uses Hugo `0.165.0`, as configured in [`netlify.toml`](netlify.toml).
+The deployed site uses Hugo `0.165.0` and Dart Sass `1.108.2`, as configured in [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
 
 ## Getting started
 
@@ -52,26 +53,19 @@ Generate the production site with:
 hugo
 ```
 
-The generated files are written to `public/`. Netlify runs the same `hugo` command and publishes that directory. Generated files in `public/` and `resources/_gen/` are ignored by Git.
+The generated files are written to `public/`. The deploy workflow builds the same directory, with `--gc --minify` added. Generated files in `public/` and `resources/_gen/` are ignored by Git.
 
 ## Repository layout
 
 ```text
 content/       Pages, posts, and project entries
-layouts/       Site-specific Hugo templates
 themes/tania/  Tania theme submodule
 static/        Files copied directly to the generated site
 config.toml    Hugo site configuration
-netlify.toml   Netlify build and deployment settings
-archetypes/   Templates for new content
+archetypes/    Templates for new content
+.github/       GitHub Actions deploy workflow
 ```
 
 ## Deployment
 
-The site is deployed through Netlify. The configured build settings are:
-
-- Build command: `hugo`
-- Publish directory: `public`
-- Hugo version: `0.165.0`
-
-Pushes to the configured Netlify repository trigger a new deployment.
+The site is deployed to GitHub Pages by the [`pages.yml`](.github/workflows/pages.yml) GitHub Actions workflow. Every push to `main` (or a manual run) builds the site with Hugo Extended `0.165.0` and Dart Sass `1.108.2`, and publishes `public/`.

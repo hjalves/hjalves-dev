@@ -36,9 +36,10 @@ name = "GitHub"
 url = "https://github.com/hjalves"
 weight = 3
 
-[[menu.footer]]
+[[menu.header]]
 name = "RSS"
 url = "/index.xml"
+weight = 4
 
 [markup]
 [markup.highlight]

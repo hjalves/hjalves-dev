@@ -1,0 +1,57 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {{- $scheme := default "auto" .Site.Params.colorScheme.default }}
+    {{- if eq $scheme "dark" }}
+    <meta name="theme-color" content="#1f2022">
+    {{- else if eq $scheme "light" }}
+    <meta name="theme-color" content="#ffffff">
+    {{- else }}
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1f2022" media="(prefers-color-scheme: dark)">
+    {{- end }}
+    <title>{{with.Title}}{{.}} | {{end}}{{.Site.Title}}</title>
+
+    <meta property="og:site_name" content="{{.Site.Params.siteName}}" />
+    <meta property="og:title" content="{{with.Title}}{{.}} | {{end}}{{.Site.Title}}"/>
+    <meta itemprop="name" content="{{with.Title}}{{.}} | {{end}}{{.Site.Title}}" />
+    <meta name="twitter:title" content="{{with.Title}}{{.}} | {{end}}{{.Site.Title}}" />
+    <meta name="application-name" content="{{with.Title}}{{.}} | {{end}}{{.Site.Title}}" />
+
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{- if not (and .IsPage (in .Site.MainSections .Section)) }}
+    <meta property="og:type" content="website" />
+    {{- end }}
+
+    {{- $image := "" }}
+    {{- with $.Params.images }}{{ $image = index . 0 | absURL }}{{ end }}
+    {{- if not $image }}
+    {{- $images := $.Resources.ByType "image" }}
+    {{- $featured := $images.GetMatch "*feature*" }}
+    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
+    {{- with $featured }}{{ $image = .Permalink }}{{ end }}
+    {{- end }}
+    {{- if not $image }}{{ with $.Site.Params.images }}{{ $image = index . 0 | absURL }}{{ end }}{{ end }}
+    {{- with $image }}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="{{ . }}"/>
+    <meta property="og:image" content="{{ . }}"/>
+    {{- else }}
+    <meta name="twitter:card" content="summary"/>
+    {{- end }}
+
+    {{- $description := .Description | default .Site.Params.siteDesc }}
+    <meta name="description" content="{{ $description }}" />
+    <meta name="twitter:description" content="{{ $description }}"/>
+    <meta itemprop="description" content="{{ $description }}"/>
+    <meta property="og:description" content="{{ $description }}" />
+
+    {{ partial "post-meta.html" . }}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
+    {{ $style := resources.Get "sass/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ partial "head/custom.html" . }}
+</head>

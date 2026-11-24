@@ -16,8 +16,8 @@ The deployed site uses Hugo `0.165.0`, as configured in [`netlify.toml`](netlify
 Clone the repository and initialize the theme submodule:
 
 ```bash
-git clone --recurse-submodules https://github.com/hjalves/halves-dev.git
-cd halves-dev
+git clone --recurse-submodules https://github.com/hjalves/hjalves-dev.git
+cd hjalves-dev
 ```
 
 If the repository was cloned without submodules, initialize it with:

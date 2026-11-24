@@ -1,3 +1,4 @@
+@use "sass:color";
 $code-font-size: 0.9rem !default;
 $code-color: #f8f8f2 !default;
 $code-background: #373b41 !default;
@@ -51,7 +52,7 @@ pre > code {
         line-height: 1.9;
         font-weight: bold;
         color: #b1b1b1;
-        background: darken($code-background, 3%);
+        background: color.adjust($code-background, $lightness: -3%);
         content: attr(data-lang);
       }
   

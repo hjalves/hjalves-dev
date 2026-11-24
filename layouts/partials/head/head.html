@@ -2,7 +2,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="theme-color" content="dark">
+    {{- $scheme := default "auto" .Site.Params.colorScheme.default }}
+    {{- if eq $scheme "dark" }}
+    <meta name="theme-color" content="#1f2022">
+    {{- else if eq $scheme "light" }}
+    <meta name="theme-color" content="#ffffff">
+    {{- else }}
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1f2022" media="(prefers-color-scheme: dark)">
+    {{- end }}
     <title>{{with.Title}}{{.}} | {{end}}{{.Site.Title}}</title>
 
     <meta property="og:site_name" content="{{.Site.Params.siteName}}" />
@@ -11,35 +19,39 @@
     <meta name="twitter:title" content="{{with.Title}}{{.}} | {{end}}{{.Site.Title}}" />
     <meta name="application-name" content="{{with.Title}}{{.}} | {{end}}{{.Site.Title}}" />
 
-    {{- with $.Params.images -}}
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="{{ index . 0 | absURL }}"/>
-    {{ else -}}
-    {{- $images := $.Resources.ByType "image" -}}
-    {{- $featured := $images.GetMatch "*feature*" -}}
-    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-    {{- with $featured -}}
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="{{ $featured.Permalink }}"/>
-    {{- else -}}
-    {{- with $.Site.Params.images -}}
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:image" content="{{ index . 0 | absURL }}"/>
-    {{ else -}}
-    <meta name="twitter:card" content="summary"/>
-    {{- end -}}
-    {{- end -}}
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <link rel="canonical" href="{{ .Permalink }}" />
+    {{- if not (and .IsPage (in .Site.MainSections .Section)) }}
+    <meta property="og:type" content="website" />
     {{- end }}
 
-    <meta name="description" content="{{ if .Description }}{{.Description}}{{ else }}{{.Site.Params.siteDesc}}{{end}}" />
-    <meta name="twitter:description" content="{{ if .Description }}{{.Description}} {{ else }}{{.Site.Params.siteDesc}}{{end}}"/>
-    <meta itemprop="description" content="{{ if .Description }} {{.Description}} {{ else }}{{.Site.Params.siteDesc}}{{end}}"/>
-    <meta property="og:description" content="{{ if .Description }} {{.Description}} {{ else }}{{.Site.Params.siteDesc}}{{ end }}" />
+    {{- $image := "" }}
+    {{- with $.Params.images }}{{ $image = index . 0 | absURL }}{{ end }}
+    {{- if not $image }}
+    {{- $images := $.Resources.ByType "image" }}
+    {{- $featured := $images.GetMatch "*feature*" }}
+    {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end }}
+    {{- with $featured }}{{ $image = .Permalink }}{{ end }}
+    {{- end }}
+    {{- if not $image }}{{ with $.Site.Params.images }}{{ $image = index . 0 | absURL }}{{ end }}{{ end }}
+    {{- with $image }}
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="{{ . }}"/>
+    <meta property="og:image" content="{{ . }}"/>
+    {{- else }}
+    <meta name="twitter:card" content="summary"/>
+    {{- end }}
+
+    {{- $description := .Description | default .Site.Params.siteDesc }}
+    <meta name="description" content="{{ $description }}" />
+    <meta name="twitter:description" content="{{ $description }}"/>
+    <meta itemprop="description" content="{{ $description }}"/>
+    <meta property="og:description" content="{{ $description }}" />
 
     {{ partial "post-meta.html" . }}
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}" />
-    {{ $style := resources.Get "sass/main.scss" | toCSS | minify | fingerprint }}
+    {{ $style := resources.Get "sass/main.scss" | css.Sass (dict "transpiler" "dartsass") | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
     {{ partial "head/custom.html" . }}
 </head>

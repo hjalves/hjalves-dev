@@ -1,4 +1,4 @@
-{{ if eq .Section "post" }}
+{{ if and .IsPage (in .Site.MainSections .Section) }}
 
 <meta property="og:type" content="article" />
 <meta property="article:publisher" content="{{ .Site.Params.author }}" />
@@ -11,7 +11,7 @@
   <meta name="author" content="{{humanize . }}" />
 {{ end }}
 
-{{ with.Params.category }}
+{{ with .Params.categories }}
   <meta name="news_keywords" content="{{ index . 0 }}" />
   <meta property="article:section" content="{{ index . 0 }}" />
 {{ end }}

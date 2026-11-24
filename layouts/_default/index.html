@@ -60,15 +60,22 @@
             {{ range $projects.ByWeight }}
             <div class="project">
                 <div>
+                    {{- if .Params.link }}
                     <a href="{{ .Params.link }}" target="_blank" rel="noreferrer">
                         <div class="icon">{{ .Params.icon }}</div>
                         <h3>{{ .Title }}</h3>
                     </a>
+                    {{- else }}
+                    <div class="icon">{{ .Params.icon }}</div>
+                    <h3>{{ .Title }}</h3>
+                    {{- end }}
                     <div class="description">{{ .Params.description }}</div>
                 </div>
+                {{- with .Params.repo }}
                 <div class="flex">
-                    <a href="{{ .Params.repo }}" class="button" target="_blank" rel="noreferrer">Source</a>
+                    <a href="{{ . }}" class="button" target="_blank" rel="noreferrer">Source</a>
                 </div>
+                {{- end }}
             </div>
             {{ end }}
         </div>

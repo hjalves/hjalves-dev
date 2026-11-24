@@ -74,6 +74,32 @@ main {
     }
 }
 
+// The narrowest phones: tighten spacing so a longer site title still fits.
+@media screen and (max-width: 359px) {
+    .navbar {
+        .flex {
+            gap: 0.25rem;
+        }
+
+        a {
+            font-size: 0.8rem;
+            padding: 0 0.2rem;
+
+            &:not(.brand):first-of-type {
+                margin-left: 0;
+            }
+        }
+
+        button {
+            margin-right: -0.75rem;
+        }
+    }
+
+    .navbar a.brand .emoji {
+        margin-right: 0.25rem;
+    }
+}
+
 @media screen and (min-width: 500px) {
     .navbar a {
         font-size: 0.95rem;

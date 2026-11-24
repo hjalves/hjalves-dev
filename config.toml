@@ -1,5 +1,5 @@
 baseurl = "https://www.hjalves.dev"
-title = "hjalves.dev"
+title = "www.hjalves.dev"
 author = "Humberto Alves"
 canonifyurls = false
 locale = "en"
@@ -7,7 +7,7 @@ theme = "tania"
 
 [params]
 titleEmoji = '💾️'
-siteName = "hjalves.dev"
+siteName = "www.hjalves.dev"
 siteDesc = "Humberto's blog"
 author = "Humberto Alves"
 

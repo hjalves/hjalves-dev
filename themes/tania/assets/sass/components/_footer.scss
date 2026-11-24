@@ -3,6 +3,12 @@
 .footer {
     padding: 2rem 0;
 
+    // Not a page section: drop the section spacing from scaffolding.
+    > section {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     >.flex {
         flex-direction: column;
         align-items: center;

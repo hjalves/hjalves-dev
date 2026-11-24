@@ -66,8 +66,10 @@
                         <h3>{{ .Title }}</h3>
                     </a>
                     {{- else }}
-                    <div class="icon">{{ .Params.icon }}</div>
-                    <h3>{{ .Title }}</h3>
+                    <div class="title">
+                        <div class="icon">{{ .Params.icon }}</div>
+                        <h3>{{ .Title }}</h3>
+                    </div>
                     {{- end }}
                     <div class="description">{{ .Params.description }}</div>
                 </div>

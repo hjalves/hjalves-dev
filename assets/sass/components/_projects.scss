@@ -16,12 +16,14 @@
         width: 40px;
     }
 
-    a {
+    a, .title {
         display: flex;
         align-items: center;
         margin-bottom: 0.25rem;
         border-width: 0;
+    }
 
+    a {
         &:hover h3 {
             text-decoration: underline;
         }
